@@ -19,5 +19,6 @@ FROM nginx:alpine AS final
 WORKDIR /usr/share/nginx/html
 COPY --from=build /app/publish/wwwroot .
 
-# Copia el archivo de configuración de Nginx (si tienes uno)
-COPY nginx.conf /etc/nginx/nginx.conf
+# Nota: No estamos copiando el archivo nginx.conf aquí
+# Si no tienes un archivo nginx.conf personalizado, puedes eliminar la línea siguiente
+# COPY nginx.conf /etc/nginx/nginx.conf
