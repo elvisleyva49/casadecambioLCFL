@@ -1,0 +1,33 @@
+@page "/tabla"
+@inject AppState AppState
+@using CasaDeCambioApp.Models
+<h3>Tabla de Transacciones</h3>
+
+@if (AppState.TransactionHistory.Count > 0)
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Fecha</th>
+                <th>Descripción</th>
+                <th>Cantidad</th>
+                <th>Moneda</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var transaccion in AppState.TransactionHistory)
+            {
+                <tr>
+                    <td>@transaccion.Date.ToString("yyyy-MM-dd HH:mm:ss")</td>
+                    <td>@transaccion.Description</td>
+                    <td>@transaccion.Amount</td>
+                    <td>@transaccion.Currency</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>No hay transacciones para mostrar.</p>
+}

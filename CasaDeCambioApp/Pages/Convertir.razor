@@ -1,0 +1,101 @@
+@page "/convertir"
+@inject AppState AppState
+
+<h3>Convertir</h3>
+
+<div>
+    <label for="amount">Cantidad:</label>
+    <input type="number" id="amount" @bind="Amount" />
+
+    <label for="fromCurrency">De:</label>
+    <select id="fromCurrency" @bind="FromCurrency">
+        <option value="USD">USD</option>
+        <option value="EUR">EUR</option>
+        <option value="PEN">PEN</option>
+    </select>
+
+    <label for="toCurrency">A:</label>
+    <select id="toCurrency" @bind="ToCurrency">
+        <option value="USD">USD</option>
+        <option value="EUR">EUR</option>
+        <option value="PEN">PEN</option>
+    </select>
+
+    <button @onclick="ConvertirSaldo">Convertir</button>
+</div>
+
+@if (!string.IsNullOrEmpty(Result))
+{
+    <p>Resultado: @Result</p>
+}
+
+<div>
+    <h4>Saldo Actual:</h4>
+    <ul>
+        <li>EURO: @AppState.SaldoEuro</li>
+        <li>USD: @AppState.SaldoUsd</li>
+        <li>PEN: @AppState.SaldoPen</li>
+    </ul>
+</div>
+
+@code {
+    private decimal Amount { get; set; }
+    private string FromCurrency { get; set; } = "USD";
+    private string ToCurrency { get; set; } = "EUR";
+    private string Result { get; set; }
+
+    private void ConvertirSaldo()
+    {
+        decimal conversionRate = 0;
+
+        // Ejemplo de tasas de conversión (estas tasas deberían ser obtenidas de un servicio real)
+        if (FromCurrency == "USD" && ToCurrency == "EUR")
+        {
+            conversionRate = 0.85M;
+            AppState.SaldoUsd -= Amount;
+            AppState.SaldoEuro += Amount * conversionRate;
+        }
+        else if (FromCurrency == "USD" && ToCurrency == "PEN")
+        {
+            conversionRate = 3.62M;
+            AppState.SaldoUsd -= Amount;
+            AppState.SaldoPen += Amount * conversionRate;
+        }
+        else if (FromCurrency == "EUR" && ToCurrency == "USD")
+        {
+            conversionRate = 1.18M;
+            AppState.SaldoEuro -= Amount;
+            AppState.SaldoUsd += Amount * conversionRate;
+        }
+        else if (FromCurrency == "EUR" && ToCurrency == "PEN")
+        {
+            conversionRate = 4.25M;
+            AppState.SaldoEuro -= Amount;
+            AppState.SaldoPen += Amount * conversionRate;
+        }
+        else if (FromCurrency == "PEN" && ToCurrency == "USD")
+        {
+            conversionRate = 0.28M;
+            AppState.SaldoPen -= Amount;
+            AppState.SaldoUsd += Amount * conversionRate;
+        }
+        else if (FromCurrency == "PEN" && ToCurrency == "EUR")
+        {
+            conversionRate = 0.23M;
+            AppState.SaldoPen -= Amount;
+            AppState.SaldoEuro += Amount * conversionRate;
+        }
+
+        Result = $"{Amount} {FromCurrency} = {Amount * conversionRate} {ToCurrency}";
+
+        AppState.TransactionHistory.Add(new AppState.Transaction // Aquí utilizamos AppState.Transaction
+        {
+            Date = DateTime.Now,
+            Description = $"Convertido {Amount} {FromCurrency} a {ToCurrency}",
+            Amount = Amount,
+            Currency = ToCurrency
+        });
+
+
+    }
+}

@@ -1,0 +1,15 @@
+@page "/logout"
+@inject AppState AppState
+@inject NavigationManager NavigationManager
+
+<h3>Cerrar Sesión</h3>
+
+<button class="btn btn-primary" @onclick="LogoutUser">Cerrar Sesión</button>
+
+@code {
+    private void LogoutUser()
+    {
+        AppState.Logout();
+        NavigationManager.NavigateTo("/");
+    }
+}

@@ -1,0 +1,69 @@
+@page "/conversion"
+
+<h3>Conversion</h3>
+
+<div>
+    <label for="amount">Cantidad:</label>
+    <input type="number" id="amount" @bind="Amount" />
+
+    <label for="fromCurrency">De:</label>
+    <select id="fromCurrency" @bind="FromCurrency">
+        <option value="USD">USD</option>
+        <option value="EUR">EUR</option>
+        <option value="PEN">PEN</option>
+    </select>
+
+    <label for="toCurrency">A:</label>
+    <select id="toCurrency" @bind="ToCurrency">
+        <option value="USD">USD</option>
+        <option value="EUR">EUR</option>
+        <option value="PEN">PEN</option>
+    </select>
+
+    <button @onclick="Convertir">Convertir</button>
+</div>
+
+@if (!string.IsNullOrEmpty(Result))
+{
+    <p>Resultado: @Result</p>
+}
+
+@code {
+    private decimal Amount { get; set; }
+    private string FromCurrency { get; set; } = "USD";
+    private string ToCurrency { get; set; } = "EUR";
+    private string Result { get; set; }
+
+    private void Convertir()
+    {
+        decimal conversionRate = 0;
+
+        // Ejemplo de tasas de conversión (estas tasas deberían ser obtenidas de un servicio real)
+        if (FromCurrency == "USD" && ToCurrency == "EUR")
+        {
+            conversionRate = 0.85M;
+        }
+        else if (FromCurrency == "USD" && ToCurrency == "PEN")
+        {
+            conversionRate = 3.62M;
+        }
+        else if (FromCurrency == "EUR" && ToCurrency == "USD")
+        {
+            conversionRate = 1.18M;
+        }
+        else if (FromCurrency == "EUR" && ToCurrency == "PEN")
+        {
+            conversionRate = 4.25M;
+        }
+        else if (FromCurrency == "PEN" && ToCurrency == "USD")
+        {
+            conversionRate = 0.28M;
+        }
+        else if (FromCurrency == "PEN" && ToCurrency == "EUR")
+        {
+            conversionRate = 0.23M;
+        }
+
+        Result = $"{Amount} {FromCurrency} = {Amount * conversionRate} {ToCurrency}";
+    }
+}

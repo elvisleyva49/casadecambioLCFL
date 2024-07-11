@@ -1,0 +1,69 @@
+@page "/login"
+@inject AppState AppState
+@inject NavigationManager NavigationManager
+
+@if (AppState.IsLoggedIn)
+{
+    <div>
+        <h3>Bienvenido, @AppState.Username!</h3>
+        <p>Tu saldo actual:</p>
+        <ul>
+            <li>EURO: @AppState.SaldoEuro</li>
+            <li>USD: @AppState.SaldoUsd</li>
+            <li>PEN: @AppState.SaldoPen</li>
+        </ul>
+        <NavLink class="btn btn-primary" href="/convertir">Comenzar</NavLink>
+    </div>
+}
+else
+{
+    <h3>Login</h3>
+
+    <div class="mb-3">
+        <label for="username" class="form-label">Usuario:</label>
+        <input type="text" class="form-control" id="username" @bind="Username" />
+    </div>
+
+    <div class="mb-3">
+        <label for="password" class="form-label">Contraseña:</label>
+        <input type="password" class="form-control" id="password" @bind="Password" />
+    </div>
+
+    <button class="btn btn-primary" @onclick="Login1">Iniciar Sesión</button>
+
+    @if (!string.IsNullOrEmpty(ErrorMessage))
+    {
+        <div class="alert alert-danger mt-3" role="alert">
+            @ErrorMessage
+        </div>
+    }
+}
+
+@code {
+    private string Username { get; set; }
+    private string Password { get; set; }
+    private string ErrorMessage { get; set; }
+
+    private void Login1()
+    {
+        if (Username == "admin" && Password == "admin")
+        {
+            AppState.IsLoggedIn = true;
+            AppState.Username = Username;
+            ErrorMessage = string.Empty;
+            // Asignar saldos iniciales
+            AppState.SaldoEuro = 500;
+            AppState.SaldoUsd = 500;
+            AppState.SaldoPen = 500;
+            NavigationManager.NavigateTo("/convertir");
+        }
+        else
+        {
+            ErrorMessage = "Usuario o contraseña incorrectos.";
+            AppState.IsLoggedIn = false;
+            AppState.SaldoEuro = 0;
+            AppState.SaldoUsd = 0;
+            AppState.SaldoPen = 0;
+        }
+    }
+}

@@ -1,0 +1,61 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\HP\\Downloads\\PROYECTO_ELVIS3\\PROYECTO_ELVIS\\CasaDeCambioApp\\bin\\Debug\\net8.0\\wwwroot\\_framework\\blazor.webassembly.js",
+      "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Downloads\\PROYECTO_ELVIS3\\PROYECTO_ELVIS\\CasaDeCambioApp\\obj\\Debug\\net8.0\\compressed\\qoiu2d3i7n.gz",
+      "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js.gz"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Downloads\\PROYECTO_ELVIS3\\PROYECTO_ELVIS\\CasaDeCambioApp\\obj\\Debug\\net8.0\\scopedcss\\bundle\\CasaDeCambioApp.styles.css",
+      "PackagePath": "staticwebassets\\CasaDeCambioApp.styles.css"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Downloads\\PROYECTO_ELVIS3\\PROYECTO_ELVIS\\CasaDeCambioApp\\wwwroot\\css\\app.css",
+      "PackagePath": "staticwebassets\\css\\app.css"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Downloads\\PROYECTO_ELVIS3\\PROYECTO_ELVIS\\CasaDeCambioApp\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Downloads\\PROYECTO_ELVIS3\\PROYECTO_ELVIS\\CasaDeCambioApp\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Downloads\\PROYECTO_ELVIS3\\PROYECTO_ELVIS\\CasaDeCambioApp\\wwwroot\\favicon.png",
+      "PackagePath": "staticwebassets\\favicon.png"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Downloads\\PROYECTO_ELVIS3\\PROYECTO_ELVIS\\CasaDeCambioApp\\wwwroot\\icon-192.png",
+      "PackagePath": "staticwebassets\\icon-192.png"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Downloads\\PROYECTO_ELVIS3\\PROYECTO_ELVIS\\CasaDeCambioApp\\wwwroot\\index.html",
+      "PackagePath": "staticwebassets\\index.html"
+    },
+    {
+      "Id": "C:\\Users\\HP\\Downloads\\PROYECTO_ELVIS3\\PROYECTO_ELVIS\\CasaDeCambioApp\\wwwroot\\sample-data\\weather.json",
+      "PackagePath": "staticwebassets\\sample-data\\weather.json"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.CasaDeCambioApp.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.CasaDeCambioApp.props",
+      "PackagePath": "build\\CasaDeCambioApp.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.CasaDeCambioApp.props",
+      "PackagePath": "buildMultiTargeting\\CasaDeCambioApp.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.CasaDeCambioApp.props",
+      "PackagePath": "buildTransitive\\CasaDeCambioApp.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
