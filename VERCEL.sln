@@ -1,10 +1,7 @@
-﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
+﻿Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.002.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CasaDeCambioAPI", "CasaDeCambioAPI\CasaDeCambioAPI.csproj", "{1692D579-CDF8-4E47-A088-E44ECA609A8B}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CasaDeCambioApp", "CasaDeCambioApp\CasaDeCambioApp.csproj", "{F565323D-F2E9-49D8-B57B-28B9499AEB9A}"
 EndProject
 Global
@@ -13,10 +10,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{1692D579-CDF8-4E47-A088-E44ECA609A8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1692D579-CDF8-4E47-A088-E44ECA609A8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1692D579-CDF8-4E47-A088-E44ECA609A8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1692D579-CDF8-4E47-A088-E44ECA609A8B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F565323D-F2E9-49D8-B57B-28B9499AEB9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F565323D-F2E9-49D8-B57B-28B9499AEB9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F565323D-F2E9-49D8-B57B-28B9499AEB9A}.Release|Any CPU.ActiveCfg = Release|Any CPU

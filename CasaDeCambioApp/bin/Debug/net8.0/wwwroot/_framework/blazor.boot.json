@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "CasaDeCambioApp",
   "resources": {
-    "hash": "sha256-yayZGEVlrv5du3NSzr4okSHQr7Bv6zmCfvCLtoOQk3A=",
+    "hash": "sha256-hasJg/7CazLDF0FuMGyfjYAGKLOn3fM8UGEiOv8Uk8w=",
     "jsModuleNative": {
       "dotnet.native.8.0.6.gbt89lbl87.js": "sha256-YU6M9+jtDVnB8/wtrgIndOstzNh778Ls8g9XnbjorSk="
     },
@@ -208,10 +208,10 @@
       "mscorlib.wasm": "sha256-XvLAB5IyfVSmj5aaGnPwgVFaaZz8jXmbN8WmeopiPBM=",
       "netstandard.wasm": "sha256-TbMssdnuTiKq1gjTPkpgROAuWN0uhvPnagvWR+wAgNs=",
       "System.Private.CoreLib.wasm": "sha256-sscg+Efk8ROPq+q4IVmhShzITuoOYvB8Bsc+Mp9vcSM=",
-      "CasaDeCambioApp.wasm": "sha256-9vNThkOH9ISa7/wFNvfOppyM4SEQ/4dgq5ifgpIbBAQ="
+      "CasaDeCambioApp.wasm": "sha256-XW2poGqTSWzfsumEW78vn0HGrKGLWVt8Sn+jMi7Ftk4="
     },
     "pdb": {
-      "CasaDeCambioApp.pdb": "sha256-XimWJELMAS6xb7nQsJlQ8V6gdcJ6E4muWFT4odhNaA8="
+      "CasaDeCambioApp.pdb": "sha256-r3eEQKAVcBlrgNHK0miYzqk8dmnsbzOW2I7Ow2Igd9Q="
     }
   },
   "cacheBootResources": true,
