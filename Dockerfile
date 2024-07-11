@@ -1,14 +1,17 @@
-# Stage 1: Build the Blazor app
-FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
+# Use .NET SDK 8.0 base image
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+
 WORKDIR /source
 
+# Copy csproj and restore as distinct layers
+COPY *.sln .
+COPY CasaDeCambioAPI/*.csproj ./CasaDeCambioAPI/
+COPY CasaDeCambioApp/*.csproj ./CasaDeCambioApp/
+
+RUN dotnet restore
+
+# Copy everything else and build the application
 COPY . .
+
+# Publish the application
 RUN dotnet publish -c Release -o /app
-
-# Stage 2: Serve the app with nginx
-FROM nginx:alpine AS final
-WORKDIR /usr/share/nginx/html
-COPY --from=build /app/wwwroot .
-
-EXPOSE 80
-CMD ["nginx", "-g", "daemon off;"]
