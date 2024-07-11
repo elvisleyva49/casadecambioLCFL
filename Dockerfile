@@ -1,17 +1,19 @@
-# Use .NET SDK 8.0 base image
+# Etapa de construcción
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
-
 WORKDIR /source
 
-# Copy csproj and restore as distinct layers
+# Copia y restaura dependencias
 COPY *.sln .
-COPY CasaDeCambioAPI/*.csproj ./CasaDeCambioAPI/
 COPY CasaDeCambioApp/*.csproj ./CasaDeCambioApp/
-
 RUN dotnet restore
 
-# Copy everything else and build the application
+# Copia todo y compila
 COPY . .
-
-# Publish the application
+WORKDIR /source/CasaDeCambioApp
 RUN dotnet publish -c Release -o /app
+
+# Etapa de publicación
+FROM nginx:alpine AS runtime
+COPY --from=build /app /usr/share/nginx/html
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]
